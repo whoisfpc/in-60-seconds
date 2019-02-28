@@ -37,6 +37,11 @@
 @img[shadow](assets/img/conference.png)
 @snapend
 
+---?gist=whoisfpc/dfa11d64769494807681d77909c099bb&lang=Cpp&title=GIST: GameNetworkManager
+@[3-8](first block)
+@[16-24](second block)
+@[26-42](third block)
+
 ---?image=assets/img/presenter.jpg
 
 @snap[north span-100 headline]
