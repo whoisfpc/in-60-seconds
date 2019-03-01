@@ -13,7 +13,7 @@
 +++
 #### Svg Test
 
-![CallServerMove](assets/svg/Autonomous/CallServerMove.svg)
+![CallServerMove](assets/svg/Autonomous/CallServerMove.png)
 
 
 +++?color=lavender
