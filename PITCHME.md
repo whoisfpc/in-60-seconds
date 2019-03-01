@@ -21,38 +21,28 @@
 [![CallServerMove](assets/svg/Autonomous/CallServerMove.svg)]
 
 
-+++?color=lavender
++++?color=cpp
 @title[Fenced Code Block]
 
-```javascript
-// Include http module.
-var http = require("http");
+```cpp
+// Update our delta time for physics simulation.
+DeltaTime = ClientData->UpdateTimeStampAndDeltaTime(DeltaTime, *CharacterOwner, *this);
 
-// Create the server. Function passed as parameter
-// is called on every request made.
-http.createServer(function (request, response) {
-  // Attach listener on end event.  This event is
-  // called when client sent, awaiting response.
-  request.on("end", function () {
-    // Write headers to the response.
-    // HTTP 200 status, Content-Type text/plain.
-    response.writeHead(200, {
-      'Content-Type': 'text/plain'
-    });
-    // Send data and end response.
-    response.end('Hello HTTP!');
-  });
+// Get a SavedMove object to store the movement in.
+FSavedMovePtr NewMovePtr = ClientData->CreateSavedMove();
+NewMove->SetMoveFor(CharacterOwner, DeltaTime, NewAcceleration, *ClientData);
+PerformMovement(NewMove->DeltaTime);
+NewMove->PostUpdate(CharacterOwner, FSavedMove_Character::PostUpdate_Record);
 
-// Listen on the 8080 port.
-}).listen(8080);
+CallServerMove(NewMove, OldMove.Get());
 ```
 
-@[1,2](You can present code inlined within your slide markdown too.)
-@[9-17](Your code is displayed using code-syntax highlighting just like your IDE.)
-@[19-20](Again, all of this without ever leaving your slideshow.)
+@[1,2](Get DeltaTime)
+@[4-8](Prepare SavedMove and Perform Move)
+@[10-10](Call ServerMove)
 
 @snap[north-east template-note text-gray]
-Code presenting fenced code block template.
+ReplicateMoveToServer
 @snapend
 
 
