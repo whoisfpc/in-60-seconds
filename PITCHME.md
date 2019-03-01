@@ -1,4 +1,4 @@
----?image=template/img/pencils.jpg
+---?image=assets/img/pencils.jpg
 @title[Code Presenting Templates]
 
 ## @color[black](Code Presenting<br>Slide Templates)
