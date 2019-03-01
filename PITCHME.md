@@ -10,6 +10,12 @@
 @snapend
 
 
++++
+#### Svg Test
+
+![CallServerMove](assets/svg/Autonomous/CallServerMove.svg)
+
+
 +++?color=lavender
 @title[Fenced Code Block]
 
